@@ -193,3 +193,12 @@ button {
     background-position: center;
     background-repeat: no-repeat;
 }
+
+audio {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    margin: 10px;
+
+}
