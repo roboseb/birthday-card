@@ -1,0 +1,195 @@
+@font-face {
+    font-family: australia;
+    src: url('fonts/Australia\ Custom.ttf');
+}
+
+body {
+    margin: 0;
+    background-color: teal;
+
+    height: 100vh;
+    width: 100vw;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    overflow: hidden;
+
+    font-family: australia, serif;
+}
+
+button {
+    font-family: australia, serif;
+}
+
+#card-box {
+    perspective: 2000px;
+    perspective-origin: 50% 50%;
+}
+
+#card {
+    box-sizing: border-box;
+    position: relative;
+
+    height: 70vh;
+    width: 50vh;
+
+    background-color: wheat;
+
+    transform-style: preserve-3d;
+    
+    transition: all 1s cubic-bezier(0,.98,.33,1.01);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#card.open {
+    transform: translate(-50%, 0%) rotateX(45deg) rotateY(-165deg);
+}
+
+#card-back {
+    box-sizing: border-box;
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    height: 100%;
+    width: 100%;
+
+    background-color: darkkhaki;
+
+    transform-style: preserve-3d;
+    transform-origin: left;
+    transform: rotateY(5deg) translateZ(-1px);
+    
+    
+    transition: all 1s;
+    transition-delay: 0.7s;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#card.open>#card-back {
+    
+    transform: rotateY(150deg) translateZ(-1px);
+}
+
+#open-btn {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+
+    font-size: 4rem;
+}
+
+#card-inside-1 {
+    box-sizing: border-box;
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    height: 100%;
+    width: 100%;
+
+    background-color: wheat;
+
+    transform-style: preserve-3d;
+    transform: rotateY(180deg) translateZ(1px);
+}
+
+#card-back-back {
+    box-sizing: border-box;
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    height: 100%;
+    width: 100%;
+
+    background-color: darkkhaki;
+
+    transform-style: preserve-3d;
+    transform: rotateY(180deg) translateZ(1px);
+}
+
+.pop-up {
+    position: absolute;
+
+    transform-style: preserve-3d;
+    transform-origin: bottom;
+    transform: rotateX(0deg);
+
+    transition: all 1s cubic-bezier(.92,.29,.56,1.62);
+
+    height: 30%;
+    width: 30%;
+
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#card.open .pop-up {
+    transform: rotateX(-70deg);
+}
+
+.pop-up.pop-up-1 {
+    top: 15%;
+    right: 0;
+
+    transition-delay: 0.65s;
+}
+
+.pop-up.pop-up-2 {
+    top: 0;
+    left: 0;
+
+    transition-delay: 0.4s;
+}
+
+.pop-up.pop-up-3 {
+    bottom: 20%;
+    left: 50%;
+
+    transform: translate(-50%, 0%);
+    transition-delay: 0.6s;
+
+    height: 50%;
+    width: 50%;
+
+    background-position: bottom;
+}
+
+#card.open .pop-up-3 {
+    transform: translate(-50%, 0%) rotateX(-70deg);
+}
+
+#card-inside-text {
+    font-size: 6rem;
+}
+
+#card-front-text {
+    font-size: 6rem;
+
+    background-color: wheat;
+    text-align: center;
+}
+
+#logo {
+    position: absolute;
+    top: 10%;
+    left: 50%;
+
+    transform: translate(-50%, 0%);
+    height: 50%;
+    width: 70%;
+
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
